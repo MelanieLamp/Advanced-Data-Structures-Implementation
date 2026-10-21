@@ -21,6 +21,25 @@ The `Tree` class manages self-balancing binary search nodes containing generic k
 * **`list()`:** Generates a flat array representing the structural arrangement of the tree corresponding to its overall allocation size.
 * **Balancing Utilities:** Internal private routines compute structural height differentials to execute left/right balancing rotations.
 
+## 📊 Algorithmic Complexity Profile
+
+The implementations are optimized to meet standard theoretical time-complexity benchmarks. By utilizing self-balancing heights for the tree and optimized hashing metrics for the map, the operations scale efficiently:
+
+### Time & Space Complexity Matrix
+
+| Data Structure | Operation | Average Complexity | Worst-Case Complexity | Space Complexity |
+| :--- | :--- | :--- | :--- | :--- |
+| **AVL Tree** | `Insert()` | \(O(\log n)\) | \(O(\log n)\) | O(1) auxiliary |
+| **AVL Tree** | `inOrderList()` | O(n) | O(n) | O(n) for array allocation |
+| **HashMap** | `put()` | O(1) | O(n) * | O(1) auxiliary |
+| **HashMap** | `get()` / `remove()`| O(1) | O(n) * | O(1) auxiliary |
+
+> \* *Note on Worst-Case HashMap Performance: Worst-case O(n) performance only occurs under a complete hash collision scenario where all elements map to the exact same bucket, degrading the search array into a linear scan.*
+
+### Key Optimization Mechanics
+* **AVL Tree Rotations:** Standard Binary Search Trees can degrade into an inefficient O(n) linear chain if data is inserted in sorted order. The explicit height calculations and structural balancing rules implemented in `Tree.h` guarantee that operations never drop below \(O(\log n)\).
+* **HashMap Distribution:** The internal `getHash` and `hashCode` routines work to uniformly scatter key distribution across allocated memory fields to maximize O(1) constant-time operations.
+
 ### 2. Hash Map (`HashMap.h`)
 A robust key-value lookup system supporting standard dictionary behavior.
 
