@@ -20,6 +20,7 @@ The `Tree` class manages self-balancing binary search nodes containing generic k
 * **`inOrderList()`:** Traverses the tree using an in-order algorithm to return a dynamically allocated array containing all stored values in perfectly sorted order.
 * **`list()`:** Generates a flat array representing the structural arrangement of the tree corresponding to its overall allocation size.
 * **Balancing Utilities:** Internal private routines compute structural height differentials to execute left/right balancing rotations.
+<br>
 
 ## 📊 Algorithmic Complexity Profile
 
@@ -35,6 +36,8 @@ The implementations are optimized to meet standard theoretical time-complexity b
 | **HashMap** | `get()` / `remove()`| O(1) | O(n) * | O(1) auxiliary |
 
 > \* *Note on Worst-Case HashMap Performance: Worst-case O(n) performance only occurs under a complete hash collision scenario where all elements map to the exact same bucket, degrading the search array into a linear scan.*
+
+<br>
 
 ### Key Optimization Mechanics
 * **AVL Tree Rotations:** Standard Binary Search Trees can degrade into an inefficient O(n) linear chain if data is inserted in sorted order. The explicit height calculations and structural balancing rules implemented in `Tree.h` guarantee that operations never drop below \(O(\log n)\).
